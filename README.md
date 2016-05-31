@@ -8,6 +8,7 @@ var receivedResponse = false
 
 http.createServer()
   .on('request', function(request, response) {
+    // Call the function with a Node.js http.ServerResponse argument.
     cacheImmutable(response)
     response.end() })
   .listen(0 /* random high port */, function() {
