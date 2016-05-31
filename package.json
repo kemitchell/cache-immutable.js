@@ -1,0 +1,18 @@
+{
+  "name": "cache-immutable",
+  "description": "set HTTP response headers to cache as long as possible",
+  "version": "0.0.0",
+  "author": "Kyle E. Mitchell <kyle@kemitchell.com> (https://kemitchell.com/)",
+  "devDependencies": {
+    "defence-cli": "^2.0.0",
+    "replace-require-self": "^1.1.1"
+  },
+  "files": [
+    "index.js"
+  ],
+  "license": "MIT",
+  "repository": "kemitchell/cache-immutable.js",
+  "scripts": {
+    "test": "defence README.md | replace-require-self | node"
+  }
+}
