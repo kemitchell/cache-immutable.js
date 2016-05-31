@@ -52,6 +52,10 @@ Fortunately, section 14.9.3 clarifies:
 
 Fortunately, many "HTTP 1.0" clients actually support Cache-Control,
 like nearly all recent clients. Mark Nottingham [notes][Nottingham]
-that's actually legit under RFC 2145.
+that's actually legit under RFC 2145. Section 2.2 says:
 
 [Nottingham]: https://www.mnot.net/blog/2007/05/15/expires_max-age
+
+> For example, an HTTP/1.1 server may send a "Cache-control" header to
+> an HTTP/1.0 client; this may be useful if the immediate recipient is
+> an HTTP/1.0 proxy, but the ultimate recipient is an HTTP/1.1 client.
