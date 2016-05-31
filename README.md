@@ -51,7 +51,7 @@ Fortunately, section 14.9.3 clarifies:
 > might be useful if certain HTTP/1.0 caches improperly calculate ages
 
 Fortunately, many "HTTP 1.0" clients actually support Cache-Control,
-like nearly all recent clients. Mark Nottingham [points out][Nottingham]
-that is actually legit under RFC 2145.
+like nearly all recent clients. Mark Nottingham [notes][Nottingham]
+that's actually legit under RFC 2145.
 
 [Nottingham]: https://www.mnot.net/blog/2007/05/15/expires_max-age
