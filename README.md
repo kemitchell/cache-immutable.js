@@ -48,8 +48,7 @@ Fortunately, section 14.9.3 clarifies:
 > max-age directive, the max-age directive overrides the Expires header,
 > even if the Expires header is more restrictive. This rule allows an
 > origin server to provide, for a given response, a longer expiration
-> time to an HTTP/1.1 (or later) cache than to an HTTP/1.0 cache. This
-> might be useful if certain HTTP/1.0 caches improperly calculate ages
+> time to an HTTP/1.1 (or later) cache than to an HTTP/1.0 cache.
 
 Fortunately, many "HTTP 1.0" clients actually support Cache-Control,
 like nearly all recent clients. Mark Nottingham [notes][Nottingham]
