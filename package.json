@@ -1,6 +1,6 @@
 {
   "name": "cache-immutable",
-  "description": "set HTTP response headers to cache as long as possible",
+  "description": "set HTTP response headers to cache for a long time",
   "version": "1.0.0",
   "author": "Kyle E. Mitchell <kyle@kemitchell.com> (https://kemitchell.com/)",
   "devDependencies": {
