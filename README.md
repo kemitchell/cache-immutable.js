@@ -18,6 +18,9 @@ http.createServer()
         var headers = response.headers
         // RFC 2616 (HTTP 1.1), section 14.21
         assert.equal(headers['cache-control'], 'max-age=31536000')
+        // 31536000
+        // = 365 * 24 * 60 * 60
+        // ~= a (non-leap) year's worth of seconds
         // HTTP 1.0 headers.  See note below.
         assert.equal(( 'expires' in headers ), false)
         assert.equal(( 'pragma' in headers ), false)
