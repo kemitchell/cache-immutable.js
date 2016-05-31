@@ -41,6 +41,8 @@ Cache-Control is much simpler; there are all kinds of
 quirks to deal with generating and parsing the "HTTP-date" format for
 Expires, while max-age is just a number of seconds.
 
+Fortunately, section 14.9.3 clarifies:
+
 > Furthermore If a response includes both an Expires header and a
 > max-age directive, the max-age directive overrides the Expires header,
 > even if the Expires header is more restrictive. This rule allows an
