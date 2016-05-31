@@ -16,11 +16,11 @@ http.createServer()
     http.request({ port: port })
       .on('response', function(response) {
         var headers = response.headers
-        receivedResponse = true
         // RFC 2616 (HTTP 1.1), section 14.21
         assert.equal(headers['cache-control'], 'max-age=31536000')
-        assert(!( 'expires' in headers ))
-        assert(!( 'pragma' in headers ))
+        assert.equal(( 'expires' in headers ), false)
+        assert.equal(( 'pragma' in headers ), false)
+        receivedResponse = true
         server.close() })
       .end() })
 
