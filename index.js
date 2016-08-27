@@ -23,5 +23,6 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-module.exports = function cacheImmutable(response) {
-  response.setHeader('Cache-Control', 'max-age=31536000') }
+module.exports = function cacheImmutable (response) {
+  response.setHeader('Cache-Control', 'max-age=31536000')
+}

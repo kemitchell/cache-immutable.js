@@ -7,31 +7,35 @@ var cacheImmutable = require('cache-immutable')
 var receivedResponse = false
 
 http.createServer()
-  .on('request', function(request, response) {
-    // Call the function with a Node.js http.ServerResponse argument.
-    cacheImmutable(response)
-    response.end() })
-  .listen(0 /* random high port */, function() {
-    var server = this
-    var port = server.address().port
-    http.request({ port: port })
-      .on('response', function(response) {
-        var headers = response.headers
-        // RFC 2616 (HTTP 1.1), section 14.21
-        assert.equal(headers['cache-control'], 'max-age=31536000')
-        // 31536000
-        // = 365 * 24 * 60 * 60
-        // ~= a (non-leap) year's worth of seconds
-        // HTTP 1.0 headers.  See note below.
-        assert.equal(( 'expires' in headers ), false)
-        assert.equal(( 'pragma' in headers ), false)
-        receivedResponse = true
-        server.close() })
-      .end() })
+.on('request', function (request, response) {
+  // Call the function with a Node.js http.ServerResponse argument.
+  cacheImmutable(response)
+  response.end()
+})
+.listen(0 /* random high port */, function () {
+  var server = this
+  var port = server.address().port
+  http.request({port: port})
+  .on('response', function (response) {
+    var headers = response.headers
+    // RFC 2616 (HTTP 1.1), section 14.21
+    assert.equal(headers['cache-control'], 'max-age=31536000')
+    // 31536000
+    // = 365 * 24 * 60 * 60
+    // ~= a (non-leap) year's worth of seconds
+    // HTTP 1.0 headers.  See note below.
+    assert.equal('expires' in headers, false)
+    assert.equal('pragma' in headers, false)
+    receivedResponse = true
+    server.close()
+  })
+  .end()
+})
 
-process.on('exit', function() {
+process.on('exit', function () {
   assert.equal(receivedResponse, true)
-  console.log('Tests passed') })
+  console.log('Tests passed')
+})
 ```
 
 HTTP 1.0 defines the Expires header, and HTTP 1.1 (RFC 2616 section
